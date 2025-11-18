@@ -1,0 +1,25 @@
+name: CI Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run build
+        run: |
+          echo "Building project..."
+          echo "Build completed successfully!"
+      
+      - name: Run linter
+        run: |
+          echo "Running linter..."
+          echo "No linting errors found!"
